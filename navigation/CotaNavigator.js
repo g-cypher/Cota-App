@@ -5,9 +5,26 @@ import CreateAccount from '../screens/CreateAccount';
 import Dashboard from '../screens/Dashboard';
 
 const CotaNavigator = createStackNavigator({
-    Login: LoginScreen,
-    AccountCreation: CreateAccount,
-    TripDashboard: Dashboard
+  Login: {
+    screen: LoginScreen,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  AccountCreation: CreateAccount,
+
+  TripDashboard: {
+    screen: Dashboard,
+    navigationOptions: {
+      title: 'Trip Dashboard',
+      headerTitleStyle: {
+        color: 'white'
+      },
+      headerStyle: {
+        backgroundColor: '#254f9d',
+      },
+    }
+  } 
 });
 
 export default createAppContainer(CotaNavigator);

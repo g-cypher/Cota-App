@@ -11,7 +11,8 @@ import {
 
 const LoginScreen = props => {
   return (
-    <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']} style={styles.linearGradient}>
+  <View style={styles.loginContainer}>
+    <LinearGradient colors={['#254f9d', '#73a2d7']} style={styles.linearGradient}>
       <View style={styles.loginLogo}>
         <Image source={require('../assets/Logo.png')} style={{width: 150, height: 150}} />
       </View>
@@ -21,41 +22,63 @@ const LoginScreen = props => {
       <View style={styles.loginInputContainer}>
         <TextInput 
           placeholder='username' 
-          style={styles.loginInput} 
+          style={styles.usernameInput} 
+          textContentType='username'
         />
       </View>
       <View style={styles.loginInputContainer}>
         <TextInput 
           placeholder='password' 
-          style={styles.loginInput} 
+          style={styles.passwordInput} 
+          textContentType='password'
+          secureTextEntry={true}
         />
       </View>
-      <View>
-        <Button 
-          title='Login' 
-          color='red'
-          style={styles.loginButton}
+      <View style={styles.centerLoginBtn}>
+        <View style={styles.loginBtnContainer}>
+          <Button 
+            style={styles.buttonTest}
+            title='Login' 
+            color='white'
+            onPress={() => {
+              props.navigation.replace('TripDashboard');
+            }}
+          />
+        </View>
+      </View>
+      <View style={styles.needAccountContainer}>  
+        <Text
+          style={styles.needAccountBtn}
           onPress={() => {
-            props.navigation.replace('TripDashboard');
-          }}/>
+            props.navigation.replace('AccountCreation')
+          }}>Don't have an account?
+        </Text>
       </View>
     </LinearGradient>
+  </View>
     );
 };
 
 const styles = StyleSheet.create({
+  loginContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flex: 1
+  },
   linearGradient: {
     flex: 1
   },
   loginLogo: {
     justifyContent: 'center',
     flexDirection: "row",
-    marginTop: 30
+    marginTop: 150
   },
   logoText: {
     fontSize: 16,
     color: 'white',
-    marginBottom: 60
+    marginBottom: 60,
+    fontWeight: 'bold',
+    letterSpacing: 2
   },
   logoTextPositioning: {
     marginTop: 5,
@@ -66,16 +89,42 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center'
   },
-  loginInput: {
-    width: '60%',
+  usernameInput: {
+    width: '70%',
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 5,
     height: 45,
-    marginBottom: 20
+    marginTop: 25,
+    paddingHorizontal: 10
   },
-  loginButton: {
-    backgroundColor: 'yellow'
-
+  passwordInput: {
+    width: '70%',
+    backgroundColor: 'white',
+    borderRadius: 5,
+    height: 45,
+    marginTop: 15,
+    paddingHorizontal: 10
+  },
+  loginBtnContainer: {
+    backgroundColor: '#254f9d',
+    width: '70%',
+    borderRadius: 10,
+    marginTop: 15,
+    
+  },
+  centerLoginBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  needAccountBtn: {
+    textDecorationLine: 'underline',
+    color: 'white',
+  },
+  needAccountContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 25
   }
 })
 
