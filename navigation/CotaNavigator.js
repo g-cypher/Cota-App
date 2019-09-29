@@ -1,10 +1,11 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import LoginScreen from '../screens/LoginScreen';
 import CreateAccount from '../screens/CreateAccount';
 import Dashboard from '../screens/Dashboard';
 
-const CotaNavigator = createStackNavigator({
+const CotaStackNavigator = createStackNavigator({
   Login: {
     screen: LoginScreen,
     navigationOptions: {
@@ -27,4 +28,4 @@ const CotaNavigator = createStackNavigator({
   } 
 });
 
-export default createAppContainer(CotaNavigator);
+export default createAppContainer(CotaStackNavigator);

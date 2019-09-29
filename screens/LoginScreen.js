@@ -41,7 +41,7 @@ const LoginScreen = props => {
             title='Login' 
             color='white'
             onPress={() => {
-              props.navigation.replace('TripDashboard');
+              props.navigation.navigate('Dashboard');
             }}
           />
         </View>
