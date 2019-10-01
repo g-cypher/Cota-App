@@ -6,7 +6,8 @@ import {
     Text,
     Button,
     Image,
-    TextInput
+    TextInput,
+    Dimensions
 } from 'react-native';
 
 const LoginScreen = props => {
@@ -71,12 +72,12 @@ const styles = StyleSheet.create({
   loginLogo: {
     justifyContent: 'center',
     flexDirection: "row",
-    marginTop: 150
+    marginTop: Dimensions.get('window').height / 6
   },
   logoText: {
     fontSize: 16,
     color: 'white',
-    marginBottom: 60,
+    marginBottom: 30,
     fontWeight: 'bold',
     letterSpacing: 2
   },
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 5,
     height: 45,
-    marginTop: 25,
+    marginTop: 5,
     paddingHorizontal: 10
   },
   passwordInput: {

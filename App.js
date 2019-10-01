@@ -21,6 +21,16 @@ const DashboardTabNavigator = createBottomTabNavigator(
   {
     Dashboard,
     LogEvent
+  }, 
+  {
+    tabBarOptions: {
+      activeTintColor: '#73a2d7',
+      inactiveTintColor: 'black',
+      style: {
+        backgroundColor: '#73a2d7'
+      },
+    },
+    
   },
   {
     navigationOptions: ({ navigation }) => {
@@ -30,7 +40,9 @@ const DashboardTabNavigator = createBottomTabNavigator(
         headerTitle: routeName
       };
     }
-  });
+  },
+  
+);
 
 const AppStackNavigator = createStackNavigator({
   DashboardTabNavigator: DashboardTabNavigator
