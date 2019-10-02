@@ -13,4 +13,8 @@ const LogEvent = props => {
     );
 };
 
+LogEvent.navigationOptions = {
+    headerTitle: 'Log Event'
+};
+
 export default LogEvent;

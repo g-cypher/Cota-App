@@ -15,47 +15,14 @@ export default function App() {
   return <AppContainer />;
 };
 
-
-
-const DashboardTabNavigator = createBottomTabNavigator(
-  {
-    Dashboard,
-    LogEvent
-  }, 
-  {
-    tabBarOptions: {
-      activeTintColor: '#73a2d7',
-      inactiveTintColor: 'black',
-      style: {
-        backgroundColor: '#73a2d7'
-      },
-    },
-    
-  },
-  {
-    navigationOptions: ({ navigation }) => {
-      const { routeName } = navigation.state.routes
-      [navigation.state.index];
-      return {
-        headerTitle: routeName
-      };
-    }
-  },
-  
-);
-
-const AppStackNavigator = createStackNavigator({
-  DashboardTabNavigator: DashboardTabNavigator
+const LogEventNavigator = createStackNavigator({
+  Log : {
+    screen: LogEvent
+  }
 },
 {
   defaultNavigationOptions:({navigation}) => {
     return {
-      headerLeft: 
-        <Icon 
-          onPress={ () => navigation.openDrawer()}  
-          style={styles.hamburgerIcon} 
-          name='md-menu' size={30} 
-        />,
       headerStyle: {
         backgroundColor: '#254f9d',
       },
@@ -66,21 +33,45 @@ const AppStackNavigator = createStackNavigator({
   }
 });
 
-const CotaDrawerNavigator = createDrawerNavigator({
-  Dashboard: {screen: AppStackNavigator}
-
+const DashNavigator = createStackNavigator({
+  Dashboard  
+},
+{
+  defaultNavigationOptions:({navigation}) => {
+    return {
+      headerStyle: {
+        backgroundColor: '#254f9d',
+        borderBottomColor: '#254f9d'
+      },
+      headerTitleStyle: {
+        color: 'white'
+      }
+    };
+  }
 });
+const DashboardTabNavigator = createBottomTabNavigator(
+  {
+    Dash: {
+      screen: DashNavigator
+    },
+    LogEvents : {
+      screen: LogEventNavigator
+    }
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: '#73a2d7',
+      inactiveTintColor: 'white',
+      style: {
+        backgroundColor: '#282828'
+      },
+    },
+  }
+);
 
 const CotaSwitchNavigator = createSwitchNavigator({
   Login:{screen: LoginScreen},
-  Dashboard:{screen: CotaDrawerNavigator}
+  Dashboard:{screen: DashboardTabNavigator}
 });
 
 const AppContainer = createAppContainer(CotaSwitchNavigator);
-
-const styles = StyleSheet.create({
-  hamburgerIcon: {
-    paddingLeft: 10,
-    color: 'white'
-  }
-})

@@ -19,12 +19,12 @@ const Dashboard = props => {
       <ScrollView>
       <View style={styles.dashHeaderContainer}>
         <View style={styles.headerAlignment}>
-          <AntDesign name="clockcircle" size={25} color="#73a2d7" />
+          <AntDesign name="clockcircle" size={25} color="white" />
           <Text style={styles.headerTitle}>3pm-5pm</Text>
           <Text style={styles.headerSubTitle}>Delivery Window</Text>
         </View>
         <View style={styles.headerAlignment}>
-          <FontAwesome name='truck' size={28} color='#73a2d7' />
+          <FontAwesome name='truck' size={28} color='white' />
           <Text style={styles.headerTitle}>Vehicle Name</Text>
           <Text style={styles.headerSubTitle}>Trailer Name</Text>
         </View>
@@ -38,14 +38,14 @@ const Dashboard = props => {
           <Text style={styles.address}>San Francisco CA, 94132</Text>
         </View>
         <View style={styles.addressIcon}>
-          <FontAwesome name="map-marker" size={30} color="#73a2d7" />
+          <FontAwesome name="map-marker" size={30} color="white" />
         </View>
       </View>
       <View style={styles.contactContainer}>
         <Text style={styles.contactName}>Contact Name</Text>
-          <Ionicons style={styles.contactIcons} name="ios-text" size={30} color="#73a2d7" />
-          <Entypo style={styles.contactIcons} name="phone" size={30} color="#73a2d7" />
-          <MaterialIcons style={styles.contactIcons} name="email" size={30} color="#73a2d7" />
+          <Ionicons style={styles.contactIcons} name="ios-text" size={30} color="white" />
+          <Entypo style={styles.contactIcons} name="phone" size={30} color="white" />
+          <MaterialIcons style={styles.contactIcons} name="email" size={30} color="white" />
       </View>
       <View style={styles.wrapper}>
         <View style={styles.shipmentDetailContainer}>
@@ -78,6 +78,10 @@ const Dashboard = props => {
       </ScrollView>
     </View>
     );
+};
+
+Dashboard.navigationOptions = {
+  headerTitle: 'Trip Dashboard'
 };
 
 const styles = StyleSheet.create({
@@ -159,7 +163,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#254f9d',
-    marginTop: 10,
+    // marginTop: 10,
     paddingVertical: 5,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 4 },
