@@ -48,6 +48,18 @@ const Dashboard = props => {
           <MaterialIcons style={styles.contactIcons} name="email" size={30} color="white" />
       </View>
       <View style={styles.wrapper}>
+        <View style={styles.shipmentDetailContainer2}>
+          <View style={styles.detailBoxes2}>
+            <Text>Commodity</Text>
+            <Text style={styles.details}>apples</Text>
+          </View>
+          <View style={styles.detailBoxes2}>
+            <Text>Appointment</Text>
+            <Text style={styles.details}>Yes</Text>
+          </View>
+        </View>
+      </View>
+      <View style={styles.wrapper}>
         <View style={styles.shipmentDetailContainer}>
           <View style={styles.detailBoxes}>
             <Text>Weight</Text>
@@ -60,18 +72,6 @@ const Dashboard = props => {
           <View style={styles.detailBoxes}>
             <Text>PO#</Text>
             <Text style={styles.details}>123456789</Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.wrapper}>
-        <View style={styles.shipmentDetailContainer2}>
-          <View style={styles.detailBoxes2}>
-            <Text>Weight</Text>
-            <Text style={styles.details}>1000lbs</Text>
-          </View>
-          <View style={styles.detailBoxes2}>
-            <Text>PU</Text>
-            <Text style={styles.details}>12345</Text>
           </View>
         </View>
       </View>
@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
   },
   shipmentDetailContainer2: {
     flexDirection: 'row',
-    // flex: 1,
     justifyContent: 'space-around'
   },
   contactIcons: {
@@ -126,7 +125,6 @@ const styles = StyleSheet.create({
   },
   shipmentDetailContainer: {
     flexDirection: 'row',
-    // flex: .5,
     justifyContent: 'space-around'
   },
   contactContainer: {
@@ -163,7 +161,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#254f9d',
-    // marginTop: 10,
     paddingVertical: 5,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 4 },
