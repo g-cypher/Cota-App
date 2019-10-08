@@ -1,46 +1,44 @@
 import React from 'react';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+// import * as Permissions from 'expo-permissions';
+// import { Camera } from 'expo-camera';
 import {
   View,
   StyleSheet,
   Text,
   Modal,
   Button,
-  TextInput
+  TouchableOpacity
 } from 'react-native';
 
-const AccidentEvent = props => {
-return (
-    <Modal visible={props.accidentVisible} animationType='slide'>
+const PhotoEvent = props => {
+  
+  return (
+    <Modal visible={props.photoVisible} animationType='slide'>
       <View style={styles.modalContainer}>
         <View style={styles.iconContainer}>
-          <MaterialIcons name='announcement' size={200} color='#254f9d' />
+          <MaterialCommunityIcons name='truck-delivery' size={200} color='#254f9d' />
         </View>
         <View style={styles.mainTextContainer}>
           <Text style={styles.mainText}>
-            We hope you're ok!
+            Congrats, you've arrived!
           </Text>
         </View>
         <View style={styles.subTextContainer}>
           <Text style={styles.subText}>
-            Please tell us about your accident.
+            Click the button below to alert dispatch you've arrived.
           </Text>
         </View>
-        <View style={styles.accidentInputContainer}>
-          <TextInput style={styles.accidentInput} multiline={true}>
-
-          </TextInput>
-        </View>
         <View style={styles.buttonContainer}>
-          <Button onPress={props.accidentNotVisible} title='Submit' color='white'/>
+          <Button onPress={props.photoNotVisible} title='Arrived' color='white'/>
         </View>
       </View>
     </Modal>
   );
 };
 
-AccidentEvent.navigationOptions = {
-  headerTitle: 'Accident'
+PhotoEvent.navigationOptions = {
+  headerTitle: 'Photo'
 };
 
 
@@ -67,27 +65,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold'
   },
-  mainTextContainer: {
-    marginTop: 20,
-    alignItems: 'center'
-  },
   subText: {
     fontSize: 12,
     color: 'gray'
   },
+  mainTextContainer: {
+    marginTop: 40,
+    alignItems: 'center'
+  },
   subTextContainer: {
     marginTop: 8
-  },
-  accidentInput: {
-    height: 140,
-    borderColor: 'gray',
-    borderWidth: 1,
-    width: '80%'
-  },
-  accidentInputContainer: {
-    width: '80%',
-    marginTop: 15,
-    alignItems: 'center'
   }
 })
-export default AccidentEvent;
+export default PhotoEvent;

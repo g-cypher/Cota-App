@@ -65,6 +65,7 @@ const ShipmentDetailNavigator = createStackNavigator({
     return {
       headerStyle: {
         backgroundColor: '#254f9d',
+        borderBottomColor: '#254f9d'
       },
       headerTitleStyle: {
         color: 'white'
