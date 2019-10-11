@@ -2,13 +2,14 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  Text
+  Text,
+  ScrollView
 } from 'react-native';
 
 const TripHistory = props => {
   return (
     <View>
-      <Text>Trip History</Text>
+    
     </View>
   );
 };
@@ -16,5 +17,9 @@ const TripHistory = props => {
 TripHistory.navigationOptions = {
   headerTitle: 'Trip History'
 };
+
+const styles = StyleSheet.create({
+  
+});
 
 export default TripHistory;

@@ -139,8 +139,10 @@ const LogEvent = props => {
         <PhotoEvent photoVisible={isPhotoMode} photoNotVisible={submitPhoto} />
         <View style={styles.testing}>
           <View style={styles.logButtonContainer}>
-            <TouchableOpacity style={styles.generalLogButton}>
-              <Text style={styles.logButtonText}>Finalize Shipment</Text>
+            <TouchableOpacity style={styles.generalLogButton} onPress={() => {
+              props.navigation.navigate({routeName: 'Finalize'});
+            }}>
+              <Text style={styles.logButtonText}>FINALIZE SHIPMENT</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -176,7 +178,7 @@ const styles = StyleSheet.create({
     marginTop: 30
   },
   generalLogButton: {
-    backgroundColor: Colors.secondary,
+    backgroundColor: Colors.primary,
     padding: 16,
     width: '70%',
     alignItems: 'center',
@@ -254,7 +256,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: 'white',
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 });
 

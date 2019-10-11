@@ -13,6 +13,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import ShipmentDetail from './screens/ShipmentDetail';
 import TripHistory from './screens/TripHistory';
+import FinalizeShipment from './screens/FinalizeShipment';
 
 
 export default function App() {
@@ -22,6 +23,9 @@ export default function App() {
 const LogEventNavigator = createStackNavigator({
   Log : {
     screen: LogEvent
+  },
+  Finalize: {
+    screen: FinalizeShipment
   }
 },
 {

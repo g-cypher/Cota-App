@@ -4,6 +4,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import {
     View,
     StyleSheet,
@@ -47,34 +48,40 @@ const Dashboard = props => {
           <Entypo style={styles.contactIcons} name="phone" size={30} color="white" />
           <MaterialIcons style={styles.contactIcons} name="email" size={30} color="white" />
       </View>
-      <View style={styles.wrapper}>
-        <View style={styles.shipmentDetailContainer2}>
-          <View style={styles.detailBoxes2}>
-            <Text>Commodity</Text>
-            <Text style={styles.details}>apples</Text>
+        <View style={styles.eventsContainer}>
+          <View style={styles.eventBoxes2}>
+            <MaterialCommunityIcons name='package-variant' color={Colors.secondary} size={30} /> 
+            <Text style={styles.detailTitle}>Commodity</Text>
+            <Text style={styles.textMarginLeft}>Apples</Text>
           </View>
-          <View style={styles.detailBoxes2}>
-            <Text>Appointment</Text>
-            <Text style={styles.details}>Yes</Text>
+          <View style={styles.eventBoxes2}>
+            <MaterialIcons name='person-pin' color={Colors.secondary} size={30} />
+            <Text style={styles.detailTitle}>Appointment</Text>
+            <Text style={styles.textMarginLeft}>Yes</Text>
           </View>
-        </View>
-      </View>
-      <View style={styles.wrapper}>
-        <View style={styles.shipmentDetailContainer}>
-          <View style={styles.detailBoxes}>
-            <Text>Weight</Text>
-            <Text style={styles.details}>1000lbs</Text>
-          </View>
-          <View style={styles.detailBoxes}>
-            <Text>PU</Text>
-            <Text style={styles.details}>12345</Text>
-          </View>
-          <View style={styles.detailBoxes}>
-            <Text>PO#</Text>
-            <Text style={styles.details}>123456789</Text>
+          <View style={styles.eventBoxes2}>
+          <MaterialCommunityIcons name='ruler' color={Colors.secondary} size={30} />
+            <Text style={styles.detailTitle}>Dimensions</Text>
+            <Text style={styles.textMarginLeft}>30x10x5 ft.</Text>
           </View>
         </View>
-      </View>
+        <View style={styles.eventsContainer}>
+          <View style={styles.eventBoxes2}>
+            <MaterialCommunityIcons name='weight' color={Colors.secondary} size={30} />
+            <Text style={styles.detailTitle}>Weight</Text>
+            <Text style={styles.textMarginLeft}>1000lbs</Text>
+          </View>
+          <View style={styles.eventBoxes2}>
+          <MaterialIcons name='confirmation-number' color={Colors.secondary} size={30} />
+            <Text style={styles.detailTitle}>PU</Text>
+            <Text style={styles.textMarginLeft}>12345</Text>
+          </View>
+          <View style={styles.eventBoxes2}>
+          <MaterialIcons name='confirmation-number' color={Colors.secondary} size={30} />
+            <Text style={styles.detailTitle}>PO#</Text>
+            <Text style={styles.textMarginLeft}>123456789</Text>
+          </View>
+        </View>
       </ScrollView>
     </View>
     );
@@ -96,34 +103,36 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'gray'
   },
-  detailBoxes: {
+  eventBoxes: {
+    width: '38%',
+    backgroundColor: 'white',
+    height: 140,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+    borderRadius: 9,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    shadowOpacity: 0.20,
+  },
+  eventBoxes2: {
     width: '30%',
     backgroundColor: 'white',
     height: 100,
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: '#F5F5F5',
-    borderWidth: 7,
-    marginBottom: 10
-  },
-  detailBoxes2: {
-    width: '40%',
-    height: 100,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: '#F5F5F5',
-    borderWidth: 7,
-    marginBottom: 10
-  },
-  shipmentDetailContainer2: {
-    flexDirection: 'row',
-    justifyContent: 'space-around'
+    marginBottom: 10,
+    borderRadius: 9,
+    shadowColor: 'black',
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 4,
+    shadowOpacity: 0.20,
   },
   contactIcons: {
     marginRight: 25
   },
-  shipmentDetailContainer: {
+  eventsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around'
   },
@@ -137,7 +146,8 @@ const styles = StyleSheet.create({
   contactName: {
     marginRight: 'auto',
     marginLeft: 25,
-    color: 'white'
+    color: 'white',
+    fontSize: 16
   },
   addressContainer: {
     flexDirection: 'row',
@@ -180,6 +190,13 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     flex: 1
+  },
+  textMarginLeft: {
+    fontSize: 12
+  },
+  detailTitle: {
+    fontWeight: 'bold',
+    fontSize: 16
   }
 });
 export default Dashboard;
